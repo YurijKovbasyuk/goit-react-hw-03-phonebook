@@ -7,13 +7,14 @@ function ContactList({ onDelete, onFilter }) {
     <div>
       <ul className={styles.contacts}>
         {onFilter().map(contact => {
+          const { id, number, name } = contact;
           return (
             <Contact
               onDelete={onDelete}
-              key={contact.id}
-              number={contact.number}
-              name={contact.name}
-              id={contact.id}
+              key={id}
+              number={number}
+              name={name}
+              id={id}
             />
           );
         })}
